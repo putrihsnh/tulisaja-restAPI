@@ -1,10 +1,10 @@
 const express = require('express')
 const app = express()
 const moongose = require('mongoose')
-const bodyParser = require('body-parse')
+const bodyParser = require('body-parser')
 const cors = require('cors')
 require('dotenv/config')
-app.use(bodyParser.urencoded({
+app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
@@ -32,6 +32,6 @@ db.once('open', () => {
     console.log('Database is connected')
 })
 
-app.listen(process.env, PORT, () => {
-    console.log(`Server running on port ${process.env,PORT}`)
+app.listen(process.env.PORT, () => {
+    console.log(`Server running on port ${process.env.PORT}`)
 })
